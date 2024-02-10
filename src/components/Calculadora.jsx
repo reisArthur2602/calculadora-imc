@@ -1,22 +1,8 @@
 import styled from 'styled-components';
 import { Input } from './Input';
-import { Button } from '../styles';
+import { Button , Container } from '../styles';
 
-const Container = styled.main`
-	max-width: 45.75rem;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 4.5rem;
-	align-items: center;
-	justify-content: center;
-	padding-inline: 2.5rem;
 
-	h1 {
-		color: #00e0ff;
-		text-transform: uppercase;
-	}
-`;
 
 const Wrapper = styled.div`
 	width: 100%;
@@ -50,8 +36,8 @@ export const Calculadora = () => {
 				</Wrapper>
 				{/* action buttons */}
 				<Wrapper>
-					<Button color="#00E0FF">Calcular</Button>
-					<Button color="#0085FF">Limpar</Button>
+					<Button color="#00E0FF" type='submit'>Calcular</Button>
+					<Button color="#0085FF" type='submit'>Limpar</Button>
 				</Wrapper>
 			</FormWrapper>
 		</Container>

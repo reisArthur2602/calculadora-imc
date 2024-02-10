@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Calculadora } from './components';
+import { Calculadora, Result } from './components';
 
 const Container = styled.div`
 	min-height: 100vh;
@@ -12,7 +12,8 @@ const Container = styled.div`
 export const App = () => {
 	return (
 		<Container>
-			<Calculadora/>
+			{/* <Calculadora /> */}
+			<Result />
 		</Container>
 	);
 };
