@@ -18,20 +18,23 @@ body{
 }
 
 h1{
-  font-size: 2rem;
+  font-size: 2.75rem;
+  font-weight: 900;
   @media screen and (max-width: 26.875rem) {
-    font-size: 2.75rem;
+    font-size: 2rem;
   }
 }
 
 input{
   outline: none;
   background: transparent;
+  border: 0;
   cursor: pointer;
 }
 
 button{
   cursor: pointer;
+  border: 0;
 }
 
 `;
