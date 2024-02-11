@@ -44,7 +44,7 @@ const Label = styled.label`
 	font-weight: 600;
 `;
 
-export const Calculadora = ({ SetImc }) => {
+export const Calculadora = ({ setImc }) => {
 	const [weight, setWeight] = useState('');
 	const [height, setHeight] = useState('');
 
@@ -54,6 +54,13 @@ export const Calculadora = ({ SetImc }) => {
 		const HeightNum = Number(height);
 
 		let result = WeightNum / (HeightNum * HeightNum);
+		setImc(result.toFixed(1));
+	};
+
+	const handleClean = () => {
+		setHeight('');
+		setWeight('');
+		setImc('');
 	};
 
 	return (
@@ -88,7 +95,7 @@ export const Calculadora = ({ SetImc }) => {
 					<Button color="#00E0FF" type="submit">
 						Calcular
 					</Button>
-					<Button color="#0085FF" type="submit">
+					<Button color="#0085FF" type="button" onClick={handleClean}>
 						Limpar
 					</Button>
 				</Wrapper>
