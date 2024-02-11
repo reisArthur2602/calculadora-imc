@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Calculadora, Result } from './components';
 import { useState } from 'react';
+import { data } from './data';
 
 const Container = styled.div`
 	min-height: 100vh;
@@ -12,13 +13,14 @@ const Container = styled.div`
 
 export const App = () => {
 	const [imc, setImc] = useState('');
+	const [info, setInfo] = useState('');
 
 	return (
 		<Container>
 			{imc ? (
-				<Result setImc={setImc} imc={imc} />
+				<Result setImc={setImc} info={info} imc={imc} />
 			) : (
-				<Calculadora setImc={setImc} />
+				<Calculadora setImc={setImc} setInfo={setInfo} />
 			)}
 		</Container>
 	);

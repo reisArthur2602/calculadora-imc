@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { Button, Container } from '../styles';
 import { useState } from 'react';
+import { data } from '../data';
 
 const Wrapper = styled.div`
 	width: 100%;
@@ -44,17 +45,28 @@ const Label = styled.label`
 	font-weight: 600;
 `;
 
-export const Calculadora = ({ setImc }) => {
+export const Calculadora = ({ setImc, setInfo }) => {
 	const [weight, setWeight] = useState('');
 	const [height, setHeight] = useState('');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+
+		if (!weight || !height) return;
+
 		const WeightNum = Number(weight);
 		const HeightNum = Number(height);
 
 		let result = WeightNum / (HeightNum * HeightNum);
+
 		setImc(result.toFixed(1));
+
+		data.forEach((item) => {
+			if (result >= item.min && result <= item.max) {
+				setInfo(item.info);
+			}
+		});
+
 		setHeight('');
 		setWeight('');
 	};

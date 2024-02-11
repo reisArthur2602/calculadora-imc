@@ -1,5 +1,5 @@
-import React from 'react';
 import { Button, Container } from '../styles';
+import { data } from '../data';
 import styled from 'styled-components';
 
 const PStyled = styled.p`
@@ -13,17 +13,16 @@ const PStyled = styled.p`
 	}
 `;
 
-export const Result = ({ imc, situation, setImc }) => {
-	
+export const Result = ({ imc, setImc, info }) => {
 	const handleBack = () => {
 		setImc('');
 	};
 
 	return (
 		<Container>
-			<h1>Seu IMC : 26.2{imc}</h1>
+			<h1>Seu IMC: {imc}</h1>
 			<PStyled>
-				Sua situação atual é de : <strong>Normal{situation}</strong>
+				Sua situação atual é de : <strong>{info}</strong>
 			</PStyled>
 			<Button type="button" color="#0085FF" onClick={handleBack}>
 				Voltar
