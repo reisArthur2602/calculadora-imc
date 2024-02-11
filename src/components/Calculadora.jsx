@@ -44,24 +44,43 @@ const Label = styled.label`
 	font-weight: 600;
 `;
 
-export const Calculadora = () => {
-	const [weight, setWeight] = useState();
-	const [height, setHeight] = useState();
+export const Calculadora = ({ SetImc }) => {
+	const [weight, setWeight] = useState('');
+	const [height, setHeight] = useState('');
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const WeightNum = Number(weight);
+		const HeightNum = Number(height);
+
+		let result = WeightNum / (HeightNum * HeightNum);
+	};
 
 	return (
 		<Container>
 			{/* title */}
 			<h1>Calcule o seu imc</h1>
-			<FormWrapper>
+			<FormWrapper onSubmit={handleSubmit}>
 				{/* Input */}
 				<Wrapper>
 					<Label>
 						Peso em KG
-						<Input type="number" placeholder="ex: 85.5" required />
+						<Input
+							type="number"
+							placeholder="ex: 85.5"
+							onChange={(e) => setWeight(e.target.value)}
+							value={weight}
+						/>
 					</Label>
 					<Label>
 						Altura em M
-						<Input type="number" placeholder=" ex: 1.78" required />
+						<Input
+							type="number"
+							placeholder=" ex: 1.78"
+							required
+							onChange={(e) => setHeight(e.target.value)}
+							value={height}
+						/>
 					</Label>
 				</Wrapper>
 				{/* action buttons */}
