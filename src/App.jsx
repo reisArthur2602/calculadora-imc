@@ -12,8 +12,8 @@ const Container = styled.div`
 export const App = () => {
 	return (
 		<Container>
-			{/* <Calculadora /> */}
-			<Result />
+			<Calculadora />
+			{/* <Result /> */}
 		</Container>
 	);
 };
