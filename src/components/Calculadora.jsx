@@ -55,6 +55,8 @@ export const Calculadora = ({ setImc }) => {
 
 		let result = WeightNum / (HeightNum * HeightNum);
 		setImc(result.toFixed(1));
+		setHeight('');
+		setWeight('');
 	};
 
 	const handleClean = () => {

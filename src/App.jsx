@@ -15,8 +15,11 @@ export const App = () => {
 
 	return (
 		<Container>
-			<Calculadora setImc={setImc} />
-			{/* <Result /> */}
+			{imc ? (
+				<Result setImc={setImc} imc={imc} />
+			) : (
+				<Calculadora setImc={setImc} />
+			)}
 		</Container>
 	);
 };

@@ -13,14 +13,19 @@ const PStyled = styled.p`
 	}
 `;
 
-export const Result = ({ imc, situation }) => {
+export const Result = ({ imc, situation, setImc }) => {
+	
+	const handleBack = () => {
+		setImc('');
+	};
+
 	return (
 		<Container>
 			<h1>Seu IMC : 26.2{imc}</h1>
 			<PStyled>
 				Sua situação atual é de : <strong>Normal{situation}</strong>
 			</PStyled>
-			<Button type="submit" color="#0085FF">
+			<Button type="button" color="#0085FF" onClick={handleBack}>
 				Voltar
 			</Button>
 		</Container>
